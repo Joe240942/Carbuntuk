@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ระบบจองคิวรถบรรทุก</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<header>
+  <h2>ระบบจองคิวรับงานรถบรรทุก</h2>
+</header>
+
+<nav>
+  <button onclick="showSection('schedule')">ดูตารางคิว</button>
+  <button onclick="showSection('booking')">จองคิว</button>
+</nav>
+
+<div class="container">
+
+  <!-- ตารางคิว -->
+  <section id="schedule">
+    <h3>📅 ตารางเวลาวันนี้</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>เวลา</th>
+          <th>สถานะ</th>
+        </tr>
+      </thead>
+      <tbody id="timeTable"></tbody>
+    </table>
+  </section>
+
+  <!-- ฟอร์มจอง -->
+  <section id="booking" class="hidden">
+    <h3>➕ จองคิว</h3>
+    <div class="form-box">
+      <label>เลือกเวลา</label>
+      <select id="timeSelect"></select>
+
+      <label>ทะเบียนรถ</label>
+      <input type="text" id="truckNo" placeholder="เช่น 70-1234">
+
+      <button onclick="bookQueue()">จองคิว</button>
+    </div>
+  </section>
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
